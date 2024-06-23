@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "server":"nodemon backend/index.js",
+    "server":"nodemon --env-file=.env backend/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
+  "type":"module",
   "dependencies": {
     "express": "^4.19.2",
     "mongoose": "^8.4.3"
