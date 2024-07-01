@@ -1,0 +1,7 @@
+function notFoundHandler(req,res,next){
+    let err = new Error(`Cannot find ${req.method} route ${req.url}`);
+    err.status = 400;
+    next(err);
+}
+
+module.exports = notFoundHandler;
