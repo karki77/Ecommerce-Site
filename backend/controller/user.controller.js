@@ -1,4 +1,5 @@
 import User from '../models/user.model.js';
+import bcrypt from 'bcryptjs';
  //bcryptjs
  //error handlers(notfound,errorhandler)
  //logger
@@ -11,12 +12,14 @@ const signup = async(req, res, next) => {
         let err = new Error (`User with email ${email} already exists!`)
         err.status = 400;
         throw err;
-    }   
+    }  
+      let salt = await bcrypt.genSalt(10);
+      let hashedPassword = await bcrypt.hash(password, salt)
     
     let newuser = await User.create({
         name,
         email,
-        password,
+        password: hashedPassword,
         isAdmin,
     });
     //let {registeredName, registeredEmail, registeredIsAdmin} = registereduser;
