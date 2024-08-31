@@ -1,0 +1,21 @@
+.rating{
+    margin: 0.5rem;
+}
+
+.rating svg {
+    color:rgb(255, 111, 0) ;
+}
+
+.rating-text{
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding-left: 0.5rem;
+}
+
+.reviews h2 {
+    font-size: 24px;
+    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+    padding: 12px;
+}
+

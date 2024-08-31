@@ -1,7 +1,7 @@
 
-function notFoundHandler(req,res,next){
+function notFoundHandler(req, res, next){
     let err = new Error(`Cannot find ${req.method} route ${req.url}`);
-    err.status = 400;
+    err.status = 404;
     next(err);
 }
 
