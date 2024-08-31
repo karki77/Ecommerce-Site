@@ -1,8 +1,13 @@
-const colors = require ("colors");
-const fs = require ("fs");
-const path = require ("path");
+import colors from 'colors';
+import fs from 'fs';
+import path from 'path';
+import url from 'url';
+
+
 
 function logger (req, res, next){
+    let __filename = url.fileURLToPath(import.meta.url);
+    let __dirname = path.dirname(__filename);
     let reqColors = {
         GET: "bgGreeen",
         POST: "yellow",
@@ -28,4 +33,4 @@ function logger (req, res, next){
     next();
 }
 
-module.exports = logger;
+export default logger;

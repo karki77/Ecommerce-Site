@@ -4,4 +4,4 @@ function errorhandler(error, req, res, next){
     res.status(statusCode).send({error: errMsg, stack: error.stack});
     }
 
-    module.exports = errorhandler;
+    export default errorhandler;
